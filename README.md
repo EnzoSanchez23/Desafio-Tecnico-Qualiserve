@@ -40,10 +40,11 @@ Desafio-Tecnico-Qualiserve/
 ```
 ---
 
-⚙️ Configuração das Variáveis de Ambiente
+## ⚙️ Configuração das Variáveis de Ambiente
 O sistema utiliza variáveis de ambiente para gerenciar as credenciais com segurança.
-    1. Na raiz do projeto, crie um arquivo chamado .env.
-    2. Adicione as suas chaves de API seguindo o modelo abaixo:
+1. Na raiz do projeto, crie um arquivo chamado .env.
+
+2. Adicione as suas chaves de API seguindo o modelo abaixo:
 
     OPENROUTER_API_KEY=sua_chave_aqui_da_openrouter
     SERPER_API_KEY=sua_chave_aqui_da_serper_dev
