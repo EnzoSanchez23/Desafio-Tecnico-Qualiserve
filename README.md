@@ -46,8 +46,10 @@ O sistema utiliza variáveis de ambiente para gerenciar as credenciais com segur
 
 2. Adicione as suas chaves de API seguindo o modelo abaixo:
 
+    ```text
     OPENROUTER_API_KEY=sua_chave_aqui_da_openrouter
     SERPER_API_KEY=sua_chave_aqui_da_serper_dev
+    ```
 
 ## 🚀 Instalação e Execução
 Siga os passos abaixo para configurar o ambiente virtual e executar a aplicação na sua máquina local:
