@@ -53,9 +53,11 @@ O sistema utiliza variáveis de ambiente para gerenciar as credenciais com segur
 
 ## 🚀 Instalação e Execução
 Siga os passos abaixo para configurar o ambiente virtual e executar a aplicação na sua máquina local:
-1. Preparar o Ambiente Virtual (Recomendado)
+1. Preparar o Ambiente Virtual (Recomendado):
+
     No terminal, dentro da pasta raiz do projeto, execute:
 
+    ```text
     No Linux/macOS:
     python -m venv venv
     source venv/bin/activate
@@ -63,17 +65,23 @@ Siga os passos abaixo para configurar o ambiente virtual e executar a aplicaçã
     No Windows (Prompt de Comando):
     python -m venv venv
     venv\Scripts\activate
+    ```
 
-2. Instalar as Dependências
+2. Instalar as Dependências:
+
 Com o ambiente virtual ativo, instale os pacotes necessários contidos no arquivo de requerimentos:
 
+    ```text
     pip install -r requirements.txt
+    ```
 
-3. Executar a Aplicação (Interface Web Streamlit)
+3. Executar a Aplicação (Interface Web Streamlit):
+
 Para iniciar o agente com a interface gráfica, execute o comando:
 
+    ```text
     streamlit run app.py
-
+    ```
 ---
 
 ## 🧠 Explicação Estratégica da Solução
