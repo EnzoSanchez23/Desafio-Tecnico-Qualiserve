@@ -1,32 +1,43 @@
 # 🤖 Curador de Notícias Tech — Desafio Técnico
 
-[cite_start]Bem-vindo ao **Curador de Notícias Tech**, uma aplicação desenvolvida como parte do processo seletivo da Qualiserve para a vaga de Desenvolvedor de Soluções de IA[cite: 4, 14].
+Este repositório contém a solução desenvolvida para o processo seletivo da **Qualiserve** para a vaga de **Desenvolvedor de Soluções de IA**. 
 
-[cite_start]O objetivo deste projeto é entregar um agente de conversação inteligente capaz de atuar de forma autônoma[cite: 19, 20]. [cite_start]Quando provocado com perguntas sobre eventos, lançamentos ou tendências recentes do mundo da tecnologia, o agente identifica a necessidade de buscar dados atualizados, realiza pesquisas em tempo real na web, consolida o contexto e responde ao usuário de forma clara, amigável e estritamente referenciada[cite: 20, 24, 25].
+O projeto consiste em um Agente de Conversação inteligente e autônomo, munido de uma interface gráfica construída em Streamlit, capaz de atuar em tempo real como um Curador de Notícias Tecnológicas. O agente analisa as perguntas dos utilizadores, identifica de forma autônoma a necessidade de buscar fatos ou tendências recentes na internet, consome APIs externas, consolida o contexto dinamicamente e gera respostas estruturadas e estritamente referenciadas.
 
 ---
 
-## 🛠️ Tecnologias e Ferramentas Obrigatórias
+## 🛠️ Ferramentas e APIs Utilizadas
 
-[cite_start]Para garantir a conformidade com os requisitos do desafio, o projeto utiliza as seguintes ferramentas de base[cite: 27]:
+Para cumprir rigorosamente os requisitos obrigatórios estabelecidos pelo desafio, foram integradas as seguintes tecnologias:
 
-- [cite_start]**Orquestração e LLM (OpenRouter):** Processamento do modelo de linguagem através da API unificada do OpenRouter (utilizando a biblioteca oficial `openai`), configurado por padrão com o modelo estável `google/gemini-2.5-flash`[cite: 28, 29].
-- [cite_start]**Pesquisa na Web (Serper.dev):** API especializada para retornar dados estruturados do Google Search em formato JSON[cite: 40, 41].
-- [cite_start]**Interface do Usuário (Streamlit):** Front-end interativo em formato de Chat, fornecendo uma experiência de uso simples e moderna.
+* **Orquestração e LLM (OpenRouter API):** Processamento cognitivo do agente através do modelo estável `google/gemini-2.5-flash` via API unificada do OpenRouter, utilizando a biblioteca oficial da `openai` de forma 100% compatível.
+* **Pesquisa na Web (Serper.dev API):** Mecanismo de busca especializado para recuperação de dados estruturados e orgânicos do Google Search em formato JSON.
+* **Interface do Usuário (Streamlit):** Front-end interativo em formato de Chat UI para fornecer uma experiência fluida, moderna e de fácil avaliação.
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-O projeto foi unificado em um script principal de interface gráfica, mantendo a raiz organizada da seguinte forma:
+O projeto foi construído seguindo padrões rígidos de modularização e separação de responsabilidades (Separation of Concerns):
 
 ```text
-curador_tech/
+Desafio-Tecnico-Qualiserve/
 │
-├── app.py             # Arquivo Único: Contém as configurações, ferramentas, core do agente e interface Streamlit.
-├── requirements.txt   # Lista de dependências e bibliotecas do projeto.
-└── .env               # Arquivo local com as variáveis de ambiente (Chaves de API).
+├── app/                      # Diretório principal da aplicação
+│   ├── agent.py              # Core do Agente (Definição de ferramentas, prompts e lógica de Tool Calling)
+│   ├── api.py                # Integração com os serviços externos (Busca no Serper.dev)
+│   ├── config.py             # Inicialização dos clientes de API e chaves de ambiente
+│   ├── interface.py          # Interface gráfica interativa construída com Streamlit
+│   └── main.py               # Interface alternativa via Linha de Comando (CLI)
+│
+├── .env.example              # Modelo explicativo de configuração das chaves
+├── .gitattributes            # Configurações de atributos do Git
+├── .gitignore                # Arquivo de exclusão para Git (ignora venv e .env)
+├── LICENSE                   # Licença de uso do projeto
+├── README.md                 # Documentação principal do repositório
+└── requirements.txt          # Lista de dependências e bibliotecas do projeto
 
+```
 ---
 
 ⚙️ Configuração das Variáveis de Ambiente
@@ -79,4 +90,3 @@ As chamadas de rede às APIs externa do Serper.dev e do OpenRouter são encapsul
 
 5. Eficiência e FinOps
 Para evitar o erro de cota 402 comum no OpenRouter ao trabalhar com Tool Calling (onde os modelos tentam reservar o limite máximo absoluto de tokens de saída por padrão), foi implementado o controle explícito de max_tokens=1000 em ambas as requisições, garantindo previsibilidade de custos e otimização do uso de créditos.
-```
