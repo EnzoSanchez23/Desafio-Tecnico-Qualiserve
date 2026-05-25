@@ -1,4 +1,4 @@
-# 🤖 Curador de Notícias Tech — Desafio Técnico
+# 🤖 NotícIAs Tech — Desafio Técnico
 
 Este repositório contém a solução desenvolvida para o processo seletivo da **Qualiserve** para a vaga de **Analista Junior**. 
 
