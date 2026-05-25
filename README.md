@@ -1,6 +1,6 @@
 # 🤖 Curador de Notícias Tech — Desafio Técnico
 
-Este repositório contém a solução desenvolvida para o processo seletivo da **Qualiserve** para a vaga de **Desenvolvedor de Soluções de IA**. 
+Este repositório contém a solução desenvolvida para o processo seletivo da **Qualiserve** para a vaga de **Analista Junior**. 
 
 O projeto consiste em um Agente de Conversação inteligente e autônomo, munido de uma interface gráfica construída em Streamlit, capaz de atuar em tempo real como um Curador de Notícias Tecnológicas. O agente analisa as perguntas dos utilizadores, identifica de forma autônoma a necessidade de buscar fatos ou tendências recentes na internet, consome APIs externas, consolida o contexto dinamicamente e gera respostas estruturadas e estritamente referenciadas.
 
@@ -50,16 +50,16 @@ O sistema utiliza variáveis de ambiente para gerenciar as credenciais com segur
 
 🚀 Instalação e Execução
 Siga os passos abaixo para configurar o ambiente virtual e executar a aplicação na sua máquina local:
-    1. Preparar o Ambiente Virtual (Recomendado)
-        No terminal, dentro da pasta raiz do projeto, execute:
+1. Preparar o Ambiente Virtual (Recomendado)
+    No terminal, dentro da pasta raiz do projeto, execute:
 
-            # No Linux/macOS:
-            python -m venv venv
-            source venv/bin/activate
+    # No Linux/macOS:
+    python -m venv venv
+    source venv/bin/activate
 
-            # No Windows (Prompt de Comando):
-            python -m venv venv
-            venv\Scripts\activate
+    # No Windows (Prompt de Comando):
+    python -m venv venv
+    venv\Scripts\activate
 
 2. Instalar as Dependências
 Com o ambiente virtual ativo, instale os pacotes necessários contidos no arquivo de requerimentos:
