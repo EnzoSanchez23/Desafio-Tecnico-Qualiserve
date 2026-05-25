@@ -48,7 +48,7 @@ O sistema utiliza variáveis de ambiente para gerenciar as credenciais com segur
     OPENROUTER_API_KEY=sua_chave_aqui_da_openrouter
     SERPER_API_KEY=sua_chave_aqui_da_serper_dev
 
-🚀 Instalação e Execução
+## 🚀 Instalação e Execução
 Siga os passos abaixo para configurar o ambiente virtual e executar a aplicação na sua máquina local:
 1. Preparar o Ambiente Virtual (Recomendado)
     No terminal, dentro da pasta raiz do projeto, execute:
