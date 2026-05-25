@@ -53,11 +53,11 @@ Siga os passos abaixo para configurar o ambiente virtual e executar a aplicaçã
 1. Preparar o Ambiente Virtual (Recomendado)
     No terminal, dentro da pasta raiz do projeto, execute:
 
-    # No Linux/macOS:
+    No Linux/macOS:
     python -m venv venv
     source venv/bin/activate
 
-    # No Windows (Prompt de Comando):
+    No Windows (Prompt de Comando):
     python -m venv venv
     venv\Scripts\activate
 
@@ -73,20 +73,25 @@ Para iniciar o agente com a interface gráfica, execute o comando:
 
 ---
 
-🧠 Explicação Estratégica da Solução
+## 🧠 Explicação Estratégica da Solução
 
-1. Lógica de Tool Calling e Engenharia de Prompt
+1. Lógica de Tool Calling e Engenharia de Prompt:
+
 Em vez de utilizar condicionais rígidas baseadas em strings (como if "pesquisa" in texto), a solução adota a tecnologia nativa de Tool Calling (Function Calling).
 A ferramenta pesquisar_web é descrita detalhadamente para o modelo através de uma estrutura JSON, mapeando os parâmetros esperados. No SYSTEM_PROMPT do arquivo app.py, o modelo é explicitamente instruído sobre a sua identidade temporal (reconhecendo o ano vigente de 2026) e orientado a ativar a ferramenta de busca sempre que o usuário trouxer perguntas factuais sobre anos recentes ou novidades tecnológicas.
 
-2. Manipulação de Dados e Contexto
+2. Manipulação de Dados e Contexto:
+
 Quando o modelo decide de forma autônoma que precisa de dados externos, o script intercepta a chamada, aciona o endpoint do Serper.dev e manipula o JSON retornado. Os títulos, snippets e URLs dos resultados mais relevantes são extraídos cirurgicamente e reinjetados no histórico da conversa sob a role de "tool", permitindo que a LLM faça a consolidação do texto final.
 
-3. Citação Obrigatória e Formatação
+3. Citação Obrigatória e Formatação:
+
 O agente foi blindado via prompt e pós-processamento com expressões regulares para nunca alucinar ou embutir marcações de citação poluidoras no meio do texto (como ``). A resposta flui de forma natural, e as referências originais coletadas na web são exibidas de maneira organizada e obrigatória em uma seção exclusiva ao final do texto, chamada "Fontes Utilizadas:".
 
-4. Resiliência e Tratamento de Exceções
+4. Resiliência e Tratamento de Exceções:
+
 As chamadas de rede às APIs externa do Serper.dev e do OpenRouter são encapsuladas em blocos de tratamento de erro (try-except). Caso ocorra falha de comunicação, timeout ou instabilidade em qualquer uma das pontas, o agente captura a exceção e retorna uma mensagem amigável ao usuário explicando o ocorrido, mitigando quebras abruptas na execução e prevenindo alucinações de dados fictícios.
 
-5. Eficiência e FinOps
+5. Eficiência e FinOps:
+
 Para evitar o erro de cota 402 comum no OpenRouter ao trabalhar com Tool Calling (onde os modelos tentam reservar o limite máximo absoluto de tokens de saída por padrão), foi implementado o controle explícito de max_tokens=1000 em ambas as requisições, garantindo previsibilidade de custos e otimização do uso de créditos.
