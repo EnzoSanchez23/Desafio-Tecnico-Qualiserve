@@ -106,3 +106,7 @@ Siga os passos abaixo para configurar o ambiente virtual e executar a aplicaçã
 5. Eficiência e FinOps:
 
     Para evitar o erro de cota 402 comum no OpenRouter ao trabalhar com Tool Calling (onde os modelos tentam reservar o limite máximo absoluto de tokens de saída por padrão), foi implementado o controle explícito de max_tokens=1000 em ambas as requisições, garantindo previsibilidade de custos e otimização do uso de créditos.
+---
+## Website
+
+ 🌍 https://desafio-tecnico-qualiserve-gx6f7c5uq7jegvqtl7kyng.streamlit.app/
