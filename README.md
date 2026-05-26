@@ -89,7 +89,7 @@ Siga os passos abaixo para configurar o ambiente virtual e executar a aplicaçã
 1. Lógica de Tool Calling e Engenharia de Prompt:
 
     Em vez de utilizar condicionais rígidas baseadas em strings (como if "pesquisa" in texto), a solução adota a tecnologia nativa de Tool Calling (Function Calling).
-    A ferramenta pesquisar_web é descrita detalhadamente para o modelo através de uma estrutura JSON, mapeando os parâmetros esperados. No SYSTEM_PROMPT do arquivo app.py, o modelo é explicitamente instruído sobre a sua identidade temporal (reconhecendo o ano vigente de 2026) e orientado a ativar a ferramenta de busca sempre que o usuário trouxer perguntas factuais sobre anos recentes ou novidades tecnológicas.
+    A ferramenta pesquisar_web é descrita detalhadamente para o modelo através de uma estrutura JSON, mapeando os parâmetros esperados. No SYSTEM_PROMPT do arquivo agent.py, o modelo é explicitamente instruído sobre a sua identidade temporal (reconhecendo o ano vigente de 2026) e orientado a ativar a ferramenta de busca sempre que o usuário trouxer perguntas factuais sobre anos recentes ou novidades tecnológicas.
 
 2. Manipulação de Dados e Contexto:
 
